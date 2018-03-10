@@ -86,7 +86,7 @@ ynh_install_nodejs
 ynh_app_setting_set $app final_path $final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_use_nodejs
-npm -g install thelounge
+npm -g install thelounge $final_path
 
 #=================================================
 # NGINX CONFIGURATION
@@ -133,7 +133,7 @@ systemctl reload nginx
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
-cp -a ..conf/config.js $final_path
+cp -a ../conf/config.js $final_path
 ynh_replace_string "__DOMAIN__" "$domain" "$final_path/config.js"
 
 #=================================================
