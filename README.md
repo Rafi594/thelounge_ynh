@@ -4,7 +4,7 @@ The Lounge for YunoHost
 	<img
 		width="300"
 		alt="The Lounge"
-		src="client/img/logo-vertical-transparent-bg.svg">
+		src="https://github.com/thelounge/thelounge/raw/master/client/img/logo-vertical-transparent-bg.svg?sanitize=true">
 </h1>
 
 [![Integration level](https://dash.yunohost.org/integration/thelounge.svg)](https://ci-apps.yunohost.org/jenkins/job/thelounge%20%28Community%29/lastBuild/consoleFull)  
