@@ -4,7 +4,7 @@ After=thelounge.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/lounge start
+ExecStart=/usr/bin/thelounge start
 User=USER
 Group=GROUP
 Restart=on-failure
