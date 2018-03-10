@@ -113,7 +113,7 @@ ynh_system_user_create $app
 #=================================================
 
 # Create a dedicated systemd config
-ynh_systemd_config
+ynh_add_systemd_config
 
 #=================================================
 # SETUP APPLICATION WITH CURL
