@@ -77,7 +77,7 @@ ynh_app_setting_set $app port $port
 #=================================================
 
 
-ynh_install_nodejs
+ynh_install_nodejs $nodejs_version
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
