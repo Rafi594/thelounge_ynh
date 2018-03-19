@@ -8,7 +8,9 @@ The Lounge for YunoHost
 </h1>
 
 [![Test sur mon CI](https://srvmaison.fr.nf/jenkins/job/thelounge_ynh/badge/icon)](https://srvmaison.fr.nf/jenkins/job/thelounge_ynh/)
+
 [![Integration level](https://dash.yunohost.org/integration/thelounge.svg)](https://ci-apps.yunohost.org/jenkins/job/thelounge%20%28Community%29/lastBuild/consoleFull)  
+
 [![Install The Lounge with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=thelounge)
 
 > *This package allow you to install The Lounge quickly and simply on a YunoHost server.  
