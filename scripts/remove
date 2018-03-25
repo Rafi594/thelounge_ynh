@@ -17,8 +17,6 @@ app=$YNH_APP_INSTANCE_NAME
 
 domain=$(ynh_app_setting_get $app domain)
 port=$(ynh_app_setting_get $app port)
-db_name=$(ynh_app_setting_get $app db_name)
-db_user=$db_name
 final_path=$(ynh_app_setting_get $app final_path)
 
 #=================================================
@@ -39,20 +37,6 @@ then
 	echo "Remove $app service"
 	yunohost service remove $app
 fi
-
-#=================================================
-# REMOVE DEPENDENCIES
-#=================================================
-
-# Remove metapackage and its dependencies
-ynh_remove_app_dependencies
-
-#=================================================
-# REMOVE THE MYSQL DATABASE
-#=================================================
-
-# Remove a database if it exists, along with the associated user
-ynh_mysql_remove_db $db_user $db_name
 
 #=================================================
 # REMOVE APP MAIN DIR
@@ -89,6 +73,7 @@ fi
 #=================================================
 # SPECIFIC REMOVE
 #=================================================
+ynh_use_nodejs
 npm uninstall $app
 ynh_remove_nodejs
 #=================================================
