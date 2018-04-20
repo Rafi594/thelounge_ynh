@@ -185,8 +185,7 @@ fi
 #=================================================
 # RELOAD NGINX
 #=================================================
-systemctl restart thelounge
-systemctl status thelounge
+systemctl start thelounge
 sleep 20
 ynh_die
 systemctl reload nginx
