@@ -41,7 +41,7 @@ app=$YNH_APP_INSTANCE_NAME
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
 #=================================================
 
-final_path=/usr/local/node_modules/$app/
+final_path=/home/yunohost.app/$app
 test ! -e "$final_path" || ynh_die "This path already contains a folder"
 
 # Normalize the url path syntax
@@ -136,7 +136,6 @@ systemctl reload nginx
 # MODIFY A CONFIG FILE
 #=================================================
 cp -a ../conf/config.js $final_path
-ynh_replace_string "__DOMAIN__" "$domain" "$final_path/config.js"
 
 #=================================================
 # STORE THE CHECKSUM OF THE CONFIG FILE
@@ -152,7 +151,7 @@ ynh_store_file_checksum "$final_path/config.js"
 #=================================================
 
 # Set permissions to app files
-chown -R root: $final_path
+chown -R $app: $final_path
 
 #=================================================
 # SETUP LOGROTATE
