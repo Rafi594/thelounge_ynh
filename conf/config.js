@@ -21,7 +21,7 @@ module.exports = {
 	// @type     string
 	// @default  undefined
 	//
-	host: __DOMAIN__,
+	host: undefined,
 
 	//
 	// Set the port to listen on.
@@ -439,7 +439,7 @@ module.exports = {
 		//
 		// @type     string
 		//
-		// baseDN: "ou=users,dc=yunohost,dc=org",
+		baseDN: "ou=users,dc=yunohost,dc=org",
 
 		//
 		// LDAP primary key
