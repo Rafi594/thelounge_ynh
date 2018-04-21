@@ -4,9 +4,9 @@ After=thelounge.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/thelounge start --home /home/yunohost.app/$app
-User=$app
-Group=$app
+ExecStart=/usr/bin/thelounge start --home /home/yunohost.app/__APP__
+User=__APP__
+Group=__APP__
 Restart=on-failure
 RestartSec=5
 StartLimitInterval=60s
