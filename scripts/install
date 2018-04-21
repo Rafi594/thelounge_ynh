@@ -187,5 +187,4 @@ fi
 #=================================================
 systemctl start thelounge
 sleep 20
-ynh_die
 systemctl reload nginx
