@@ -1,12 +1,7 @@
-before_script:
-    - git clone --depth 1 git://github.com/YunoHost/package_linter ../package_linter && cd ../package_linter
-    - mv ../thelounge_ynh thelounge_ynh
+language: python
+install: ""
+python:
+    - "3.5"
 script:
-    - ./package_linter.py thelounge_ynh
-notifications:
-  email: false
-  irc:
-    on_success: always
-    on_failure: always
-    channels:
-- "irc.freenode.net#rafi59_test"
+  - git clone https://github.com/YunoHost/package_linter
+- python package_linter/package_linter.py .
