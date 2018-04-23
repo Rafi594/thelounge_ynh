@@ -4,7 +4,7 @@ before_script:
 script:
     - ./package_linter.py thelounge_ynh
 notifications:
-  email: true
+  email: false
   irc:
     on_success: always
     on_failure: always
