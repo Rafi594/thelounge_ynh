@@ -1,0 +1,12 @@
+before_script:
+    - git clone --depth 1 git://github.com/YunoHost/package_linter ../package_linter && cd ../package_linter
+    - mv ../thelounge_ynh thelounge_ynh
+script:
+    - ./package_linter.py thelounge_ynh
+notifications:
+  email: true
+  irc:
+    on_success: always
+    on_failure: always
+    channels:
+- "irc.freenode.net#rafi59_test"
