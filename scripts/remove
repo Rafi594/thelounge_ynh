@@ -76,6 +76,7 @@ fi
 ynh_use_nodejs
 npm uninstall $app
 ynh_remove_nodejs
+ynh_secure_remove $final_path
 #=================================================
 # GENERIC FINALIZATION
 #=================================================
