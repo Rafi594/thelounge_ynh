@@ -7,7 +7,7 @@ The Lounge for YunoHost
 		src="https://github.com/thelounge/thelounge/raw/master/client/img/logo-vertical-transparent-bg.svg?sanitize=true">
 </h1>
 
-[![Test sur mon CI](https://srvmaison.fr.nf/jenkins/job/thelounge_ynh/badge/icon)](https://srvmaison.fr.nf/jenkins/job/thelounge_ynh/)
+[![Linter](https://api.travis-ci.org/Rafi594/thelounge_ynh.svg?branch=master)
 
 [![Integration level](https://dash.yunohost.org/integration/thelounge.svg)](https://ci-apps.yunohost.org/jenkins/job/thelounge%20%28Community%29/lastBuild/consoleFull)  
 
