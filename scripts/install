@@ -41,7 +41,8 @@ app=$YNH_APP_INSTANCE_NAME
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
 #=================================================
 
-final_path=/home/yunohost.app/$app
+final_path=/var/www/$app
+config_path=/home/yunohost.app/$app/
 test ! -e "$final_path" || ynh_die "This path already contains a folder"
 
 # Normalize the url path syntax
@@ -86,9 +87,9 @@ ynh_install_nodejs $nodejs_version
 
 ynh_app_setting_set $app final_path $final_path
 mkdir -p $final_path
+mkdir -p $config_path
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_use_nodejs
-npm -g install thelounge
+ynh_setup_source $final_path
 
 #=================================================
 # NGINX CONFIGURATION
@@ -105,12 +106,6 @@ ynh_add_nginx_config
 ynh_system_user_create $app
 
 #=================================================
-# SPECIFIC SETUP
-#=================================================
-# ...
-#=================================================
-
-#=================================================
 # SETUP SYSTEMD
 #=================================================
 
@@ -118,31 +113,22 @@ ynh_system_user_create $app
 ynh_add_systemd_config
 
 #=================================================
-# SETUP APPLICATION WITH CURL
+# INSTALL THE LOUNGE
 #=================================================
+npm -g install $final_path
 
-# Set right permissions for curl install
-#chown -R $app: $final_path
-
-# Set the app as temporarily public for curl call
-ynh_app_setting_set $app skipped_uris "/"
-# Reload SSOwat config
-yunohost app ssowatconf
-
-# Reload Nginx
-systemctl reload nginx
 
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
-cp -a ../conf/config.js $final_path
+cp -a ../conf/config.js $config_path
 
 #=================================================
 # STORE THE CHECKSUM OF THE CONFIG FILE
 #=================================================
 
 # Calculate and store the config file checksum into the app settings
-ynh_store_file_checksum "$final_path/config.js"
+ynh_store_file_checksum "$config_path/config.js"
 
 #=================================================
 # GENERIC FINALIZATION
@@ -152,6 +138,7 @@ ynh_store_file_checksum "$final_path/config.js"
 
 # Set permissions to app files
 chown -R $app: $final_path
+chown -R $app: $config_path
 
 #=================================================
 # SETUP LOGROTATE

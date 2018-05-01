@@ -47,7 +47,7 @@ module.exports = {
 	// @type     boolean
 	// @default  false
 	//
-	reverseProxy: false,
+	reverseProxy: true,
 
 	//
 	// Set the default theme.
@@ -449,27 +449,5 @@ module.exports = {
 		//
 		primaryKey: "uid"
 
-		},
-	},
-
-	// Extra debugging
-	//
-	// @type     object
-	// @default  {}
-	//
-	debug: {
-		// Enables extra debugging output provided by irc-framework.
-		//
-		// @type     boolean
-		// @default  false
-		//
-		ircFramework: false,
-
-		// Enables logging raw IRC messages into each server window.
-		//
-		// @type     boolean
-		// @default  false
-		//
-		raw: false,
-	},
+		}
 };

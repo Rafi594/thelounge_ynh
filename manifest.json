@@ -10,12 +10,12 @@
     "url": "https://thelounge.chat/",
     "license": "free",
     "maintainer": {
-        "name": "John doe",
-        "email": "john.doe@example.com",
-        "url": "http://example.com"
+        "name": "rafi59",
+        "email": "rafi59_dev@srvmaison.fr.nf",
+        "url": "http://blog.rafi59.codelib.re/"
     },
     "requirements": {
-        "yunohost": ">= 2.7.2"
+        "yunohost": ">= 2.7.10"
     },
     "multi_instance": true,
     "services": [
